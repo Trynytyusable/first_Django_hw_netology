@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашняя страница</title>
+</head>
+<body>
+    <h1 align="center">Выберите раздел:</h1>
+    {% for title, url in pages.items %}
+        <p align="center" style="width:100x;height:75px"><button><a href="{{ url }}">{{ title }}</a></button></p>
+        <br>
+    {% endfor %}
+</body>
+</html>
