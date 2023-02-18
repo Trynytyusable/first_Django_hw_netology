@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-        <style>
+    <style>
     .wrapper {
       margin: auto;
     }
@@ -59,15 +59,27 @@
         font-size: 1.5rem;
     }
     </style>
-
 </head>
 <body>
-<h1 align="center" class="previu">Файлы используемые в моем каталоге:</h1>
-{% for el in list_dir %}
-<p align="center" class="text_previu">{{ el }}</p>
-<br>
-{% endfor %}
+    <h2 align="center" class="previu">Тут показано содержимое страницы: {{ page_number }}</h2>
+        {% for el in page %}
+        <p align="center" class="text_previu">{{ el }}</p>
+        {% endfor %}
 <div class="wrapper" align="center">
+    <p class="block">
+        {% if page.has_previous %}
+<!--        <a href="?page={{ page.previous_page_number }}"><button>{{ previous_page }}</button></a>-->
+        <a href="?page={{ page.previous_page_number }}" class="sliding-button">{{ previous_page }}</a>
+        {% endif %}
+    </p>
+    <p class="sliding-button"><font color="#fa8e47">{{ page_number }}</font></p>
+    <p class="block">
+        {% if page.has_next %}
+<!--        <a href="?page={{ page.next_page_number }}"><button>{{ next_page }}</button></a>-->
+<!--        <a href="?page={{ page.next_page_number }}"><button>{{ next_page }}</button></a>-->
+        <a href="?page={{ page.next_page_number }}" class="sliding-button">{{ next_page }}</a>
+        {% endif %}
+    </p>
     <p>
         <a href="{{ home_page }}" class="sliding-button">Вернуться на главную страницу</a>
     </p>

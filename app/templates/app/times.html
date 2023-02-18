@@ -3,11 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+        <style>
+    .wrapper {
+      margin: auto;
+    }
+    .block {
+      display: inline-block;
+      margin: auto;
+    }
+    body {
+        background: #1D1B26;
+<!--        background: white;-->
+    }
+    .sliding-button {
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+      position: relative;
+      padding: 15px 30px;
+      border: 1px solid;
+      border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+      border-image-slice: 1;
+      margin: 10px 20px;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      overflow: hidden;
+      letter-spacing: 2px;
+      transition: .8s cubic-bezier(.165, .84, .44, 1);
+    }
+    .sliding-button:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 0;
+      width: 100%;
+      z-index: -1;
+      color: white;
+      background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+      transition: .8s cubic-bezier(.165, .84, .44, 1);
+    }
+    .sliding-button:hover {
+        background: rgba(255, 255, 255, 0);
+    }
+    .sliding-button:hover:before {
+      bottom: 0%;
+      top: auto;
+      height: 100%;
+    }
+    .previu{
+        color: #FFD700;
+    }
+    .text_previu{
+        color: #B22222;
+        font-size: 1.5rem;
+    }
+    </style>
 </head>
 <body>
-<h1 align="center">Ваше текущее время:</h1>
-<h2 align="center">{{ times }}</h2>
-<h1 align="center"><font size="6" color="#fa8e47" face="serif"> Ваша операционная система:</font></h1>
-<h2 align="center">{{ os_user }}</h2>
+    <h1 align="center" class="previu">Ваше текущее время:</h1>
+    <h2 align="center" class="text_previu">{{ times }}</h2>
+    <h1 align="center" class="previu">Ваша операционная система:</h1>
+    <h2 align="center" class="text_previu">{{ os_user }}</h2>
+<div class="wrapper" align="center">
+    <p>
+        <a href="{{ home_page }}" class="sliding-button">Вернуться на главную страницу</a>
+    </p>
+</div>
 </body>
 </html>
