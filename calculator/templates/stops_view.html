@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <tr>
+          {% for el in list_with_name_in_pd %}
+            <th>{el}</th>
+            <th>{el}</th>
+            <th>{el}</th>
+      </tr>
+        {% for el2 in clear_df %}
+  <tr>
+    <td align="center" width="300" height="35">{el2}</td>
+    <td align="center" width="300" height="35">{el2}</td>
+    <td align="center" width="300" height="35">{el2}</td>
+  </tr>
+         {% endfor %}
+        {% endfor %}
+</body>
+</html>
